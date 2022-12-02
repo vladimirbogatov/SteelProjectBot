@@ -4,13 +4,99 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
+    <parent>
+        <groupId>org.example</groupId>
+        <artifactId>parent</artifactId>
+        <relativePath>../parent/pom.xml</relativePath>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <artifactId>persist</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <name>Persist</name>
 
     <properties>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-    
+
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>common</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-core -->
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-core</artifactId>
+            <version>3.34.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-sqlobject -->
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-sqlobject</artifactId>
+            <version>3.34.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-postgres -->
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-postgres</artifactId>
+            <version>3.34.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-testing -->
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-testing</artifactId>
+            <version>3.34.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!--        http://jdbi.org/#_sqlobject-->
+        <!-- https://mvnrepository.com/artifact/org.jdbi/jdbi3-kotlin-sqlobject -->
+        <dependency>
+            <groupId>org.jdbi</groupId>
+            <artifactId>jdbi3-kotlin-sqlobject</artifactId>
+            <version>3.34.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.5.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opentable.components</groupId>
+            <artifactId>otj-pg-embedded</artifactId>
+            <version>0.13.4</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--        &lt;!&ndash;https://github.com/jdbi/jdbi/issues/630&ndash;&gt;
+                &lt;!&ndash; https://mvnrepository.com/artifact/org.antlr/stringtemplate &ndash;&gt;
+                <dependency>
+                    <groupId>org.antlr</groupId>
+                    <artifactId>stringtemplate</artifactId>
+                    <version>4.0.2</version>
+                </dependency>-->
+        <!--        <dependency>
+                    <groupId>com.bertoncelj.jdbi.entitymapper</groupId>
+                    <artifactId>jdbi-entity-mapper</artifactId>
+                    <version>1.0.0</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>org.jdbi</groupId>
+                            <artifactId>jdbi</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>-->
+        <!--        <dependency>
+                    <groupId>com.h2database</groupId>
+                    <artifactId>h2</artifactId>
+                    <version>2.1.214</version>
+                    <scope>test</scope>
+                </dependency>-->
+    </dependencies>
+
 </project>

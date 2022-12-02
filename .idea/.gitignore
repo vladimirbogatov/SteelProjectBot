@@ -1,3 +1,5 @@
 # Default ignored files
 /shelf/
 /workspace.xml
+/services/telegram_servlet/src/main/resources/data.properties
+/.idea/
